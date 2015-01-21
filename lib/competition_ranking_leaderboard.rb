@@ -1,6 +1,6 @@
 require 'leaderboard'
 
-class CompetitionRankingLeaderboard < Leaderboard
+class CompetitionRankingLeaderboard < StoredLeaderboard
   # Retrieve the rank for a member in the named leaderboard.
   #
   # @param leaderboard_name [String] Name of the leaderboard.

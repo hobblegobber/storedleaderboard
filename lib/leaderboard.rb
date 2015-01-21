@@ -1,7 +1,7 @@
 require 'redis'
 require 'leaderboard/version'
 
-class Leaderboard
+class StoredLeaderboard
   # Default page size: 25
   DEFAULT_PAGE_SIZE = 25
 

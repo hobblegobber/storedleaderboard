@@ -13,7 +13,7 @@ describe 'CompetitionRankingLeaderboard' do
 
   context 'ties' do
     it 'should retrieve the correct rankings for #leaders' do
-      leaderboard = CompetitionRankingLeaderboard.new('ties', Leaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
+      leaderboard = CompetitionRankingLeaderboard.new('ties', StoredLeaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
       leaderboard.rank_member('member_1', 50)
       leaderboard.rank_member('member_2', 50)
       leaderboard.rank_member('member_3', 30)
@@ -32,7 +32,7 @@ describe 'CompetitionRankingLeaderboard' do
     end
 
     it 'should retrieve the correct rankings for #leaders with different page sizes' do
-      leaderboard = CompetitionRankingLeaderboard.new('ties', Leaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
+      leaderboard = CompetitionRankingLeaderboard.new('ties', StoredLeaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
       leaderboard.rank_member('member_1', 50)
       leaderboard.rank_member('member_2', 50)
       leaderboard.rank_member('member_6', 50)
@@ -60,7 +60,7 @@ describe 'CompetitionRankingLeaderboard' do
     end
 
     it 'should retrieve the correct rankings for #around_me' do
-      leaderboard = CompetitionRankingLeaderboard.new('ties', Leaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
+      leaderboard = CompetitionRankingLeaderboard.new('ties', StoredLeaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
       leaderboard.rank_member('member_1', 50)
       leaderboard.rank_member('member_2', 50)
       leaderboard.rank_member('member_6', 50)
@@ -82,7 +82,7 @@ describe 'CompetitionRankingLeaderboard' do
     end
 
     it 'should allow you to retrieve the rank of a single member using #rank_for' do
-      leaderboard = CompetitionRankingLeaderboard.new('ties', Leaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
+      leaderboard = CompetitionRankingLeaderboard.new('ties', StoredLeaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
       leaderboard.rank_member('member_1', 50)
       leaderboard.rank_member('member_2', 50)
       leaderboard.rank_member('member_3', 30)
@@ -95,7 +95,7 @@ describe 'CompetitionRankingLeaderboard' do
     end
 
     it 'should allow you to retrieve the score and rank of a single member using #score_and_rank_for' do
-      leaderboard = CompetitionRankingLeaderboard.new('ties', Leaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
+      leaderboard = CompetitionRankingLeaderboard.new('ties', StoredLeaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
       leaderboard.rank_member('member_1', 50)
       leaderboard.rank_member('member_2', 50)
       leaderboard.rank_member('member_3', 30)
@@ -108,7 +108,7 @@ describe 'CompetitionRankingLeaderboard' do
     end
 
     it 'should have the correct rankings and scores when using change_score_for' do
-      leaderboard = CompetitionRankingLeaderboard.new('ties', Leaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
+      leaderboard = CompetitionRankingLeaderboard.new('ties', StoredLeaderboard::DEFAULT_OPTIONS, {:host => "127.0.0.1", :db => 15})
 
       leaderboard.rank_member('member_1', 50)
       leaderboard.rank_member('member_2', 50)
